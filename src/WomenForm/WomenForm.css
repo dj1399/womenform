@@ -1,0 +1,128 @@
+.WomenForm_img {
+  background-color: black;
+}
+.form-group {
+  padding-left: 14px !important;
+  padding-right: 14px !important;
+}
+.col {
+  padding-left: 0px !important;
+  margin-left: 12px !important;
+}
+#WomenForm_input {
+  width: 190px !important;
+  height: 38px;
+  border: 1px solid #cadeef;
+  box-sizing: border-box;
+  border-radius: 7px;
+  margin-left: 28px !important;
+  margin-right: 28px !important;
+  margin-bottom: 35px;
+  color: #390969;
+}
+.WomenForm_select {
+  width: 187px;
+  height: 38px;
+  left: 264px;
+  top: 333px;
+
+  border: 1px solid #cadeef;
+  box-sizing: border-box;
+  border-radius: 7px;
+  color: #390969;
+}
+.WomenForm_heading {
+  /* width: 488px;
+  height: 68px; */
+  margin-left: 46px;
+  margin-top: 92px;
+
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 45px;
+  text-align: left;
+  color: #29517c;
+}
+.WomenForm_head {
+  width: 515px;
+  height: 57px;
+  margin-left: 46px;
+  top: 138px;
+  margin-bottom: 65px;
+  font-family: SF Pro;
+  font-style: normal;
+  font-weight: 200;
+  font-size: 48px;
+  line-height: 57px;
+  text-align: left;
+  color: #29517c;
+}
+.WomenForm_next {
+  width: 145px;
+  height: 41px;
+  margin-left: 287px;
+  margin-top: 85px;
+  color: white;
+  background: #390969;
+  border: 1px solid #e2ecf5;
+  box-sizing: border-box;
+  border-radius: 7px;
+}
+input.WomenForm_add.form-control {
+  width: 623px !important;
+  height: 62px !important;
+}
+
+.WomenForm_em {
+  width: 188px;
+}
+.form_main {
+  margin: 0px !important;
+  padding: 0px !important;
+}
+.WomenForm_drop {
+  width: 213px;
+  height: 38px;
+  margin-left: 46px;
+  top: 260px;
+
+  border: 1px solid #cadeef;
+  box-sizing: border-box;
+  border-radius: 7px;
+
+  padding-left: 60px;
+  font-family: SF Pro Display;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+  /* identical to box height */
+  color: #390969;
+}
+.WomenForm_member {
+  margin-left: 46px;
+  /* top: 328px; */
+  margin-bottom: 30px;
+  font-family: SF Pro Display;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 25px;
+  line-height: 30px;
+  /* identical to box height */
+
+  color: #390969;
+}
+.WomenForm_reg {
+  width: 145px;
+  height: 41px;
+  left: 287px;
+  top: 773px;
+
+  background: #390969;
+  border: 1px solid #e2ecf5;
+  box-sizing: border-box;
+  border-radius: 7px;
+  color: white;
+}
