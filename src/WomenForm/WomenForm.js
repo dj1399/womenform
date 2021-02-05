@@ -98,18 +98,18 @@ export default class WomenForm extends React.Component
                      </div>
                      <div className="form-row row1">
                      <div className="col-md-4 col-sm-12 no-gutters ">
-                     <input type="name" class="form-control" id="Student_input" placeholder="Mobile Number"/>
+                     <input type="number" class="form-control" id="Student_input" placeholder="Mobile Number"/>
                      </div>
                      <div className="col-md-4 col-sm-12 no-gutters ">
-                     <input type="name" class="form-control" id="Student_input" placeholder="Mobile Number 2"/>
+                     <input type="number" class="form-control" id="Student_input" placeholder="Mobile Number 2"/>
                      </div>
                      </div>
                      <div className="form-row row1">
                      <div className="col-md-4 col-sm-12 no-gutters ">
-                     <input type="name" class="form-control" id="Student_input" placeholder="City"/>
+                     <input type="text" class="form-control" id="Student_input" placeholder="City"/>
                      </div>
                      <div className="col-md-4 col-sm-12 no-gutters ">
-                     <input type="name" class="form-control" id="Student_input" placeholder="State"/>
+                     <input type="text" class="form-control" id="Student_input" placeholder="State"/>
                      </div>
                      </div>
                      <div>
