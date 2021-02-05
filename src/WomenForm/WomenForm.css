@@ -139,6 +139,16 @@ input.WomenForm_add.form-control {
 .Student_deg {
   margin-top: 20px;
 }
+.Student_page1 {
+  text-align: right;
+  margin-left: 514px;
+  margin-top: 30px !important;
+}
+.Student_page2 {
+  margin-top: 195px;
+  margin-left: 514px;
+  margin-bottom: 70px;
+}
 @media (max-width: 500px) {
   .Student_capcha {
     margin-bottom: 18px;
@@ -162,5 +172,15 @@ input.WomenForm_add.form-control {
   .WomenForm_head {
     font-size: 28px;
     margin-bottom: 15px;
+  }
+  .Student_page1 {
+    align-items: left;
+    margin-left: 0px;
+    margin-top: 0px;
+  }
+  .Student_page2 {
+    align-items: left;
+    margin-left: 0px;
+    margin-top: 0px;
   }
 }
