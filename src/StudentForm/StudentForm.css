@@ -171,6 +171,12 @@
 .row5 {
   margin-top: 97px;
 }
+
+img .Student_page1 {
+  text-align: right;
+  margin-left: 139px;
+  margin-top: 30px !important;
+}
 @media (max-width: 500px) {
   #Student_input {
     margin-bottom: 25px;

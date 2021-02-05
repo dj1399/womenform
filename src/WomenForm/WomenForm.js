@@ -3,6 +3,8 @@ import React from "react";
 import "./WomenForm.css";
 import "../StudentForm/StudentForm.css";
 import arrow from "../Images/arrow.svg" ;
+import page1 from "../Images/page1.png";
+import page2 from "../Images/page1.png";
 export default class WomenForm extends React.Component
 {   
     constructor (props) {
@@ -19,6 +21,14 @@ export default class WomenForm extends React.Component
                   secondPage:true
               })
             }
+            handleClick = (event) =>
+            {
+                 event.preventDefault()
+                 this.setState({
+                     firstPage:true,
+                     secondPage:false
+                 })
+               }
     render(){
         return(
             <div className="WomenForm form_main" >
@@ -107,6 +117,7 @@ export default class WomenForm extends React.Component
                                 <button className="Student_next" onClick={this.handleClickNext}>
                                     NEXT
                                     </button>
+                                    <img src={page1} className="Student_page1"></img>
                                     </div>
                                     </div>
                      </div>
@@ -195,6 +206,7 @@ export default class WomenForm extends React.Component
                                 {/* </div>
                                 <div className="col-md-6"> */}
                                 <button className ="Student_submit"> Submit</button>
+                                <img src={page2} className="Student_page2"></img>
                                 {/* </div> */}
                                 </div>
                      {/* </div> */}
