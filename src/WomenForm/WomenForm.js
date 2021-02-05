@@ -103,9 +103,11 @@ export default class WomenForm extends React.Component
                      </div>
                      </div>
                      <div>
+                          <div className="col-md-12 align-items-center">
                                 <button className="Student_next" onClick={this.handleClickNext}>
                                     NEXT
                                     </button>
+                                    </div>
                                     </div>
                      </div>
                  </form>
@@ -120,7 +122,7 @@ export default class WomenForm extends React.Component
                    
                    this.state.secondPage && <div className="second">
                        <div className="row">
-                <div className="col-md-6">
+                <div className="col-md-6 ">
                 <div className="WomenForm_heading">Come Join Us</div>
                          <div className="WomenForm_head">You are so close</div>
                  <form>
@@ -172,15 +174,15 @@ export default class WomenForm extends React.Component
                      </div>
                      
                      <div className="col-md-5 col-sm-12 ">
-                     <input type="name" class="form-control" id="Student_input" placeholder="Degree Certificate"/>
+                     <input type="name" class="Student_deg form-control" id="Student_input" placeholder="Degree Certificate"/>
                      </div>
                      </div>
                      {/* <div className="WomenForm_cap">Capcha</div> */}
                      <div className="form-row row4">
-                              <div className="col-sm-12">
+                              <div className="col-md-5 col-sm-12">
                                 <div className ="col Student_capcha" >RTX3090</div>
                                 </div>
-                                <div className="col-sm-12">
+                                <div className="col-md-5 col-sm-12">
                                 <input className ="form-control col " id="Student_input" placeholder="Enter Capcha"/>
                                 </div>
                                 <div className=" col"></div>

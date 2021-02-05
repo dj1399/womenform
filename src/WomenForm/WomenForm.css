@@ -48,6 +48,10 @@
   text-align: left;
   color: #29517c;
 }
+.Student_next {
+  align-items: center;
+  margin-left: 100%;
+}
 .WomenForm_head {
   width: 515px;
   height: 57px;
@@ -129,8 +133,31 @@ input.WomenForm_add.form-control {
   border-radius: 7px;
   color: white;
 }
+.Student_deg {
+  margin-top: 20px;
+}
 @media (max-width: 500px) {
   .Student_capcha {
     margin-bottom: 18px;
+  }
+  .row {
+    width: 100%;
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+  .col {
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+  }
+  .form-row {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+  .WomenForm_heading {
+    font-size: 26px;
+  }
+  .WomenForm_head {
+    font-size: 28px;
+    margin-bottom: 15px;
   }
 }
