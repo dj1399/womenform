@@ -1,8 +1,10 @@
 import React from "react";
-import img from "../Images/Rectangle 571.svg";
+// import img from "../Images/Rectangle 571.svg";
 import "./WomenForm.css";
+import "../StudentForm/StudentForm.css";
+import arrow from "../Images/arrow.svg" ;
 export default class WomenForm extends React.Component
-{
+{   
     constructor (props) {
         super(props)
          this.state = {
@@ -24,71 +26,87 @@ export default class WomenForm extends React.Component
                    
                    this.state.firstPage && <div className="first">
             <div className="row">
-                <div className="col-md-6" >
+                <div className="col-md-6 col-sm-12" >
                 <div className="WomenForm_heading">Come Join Us</div>
                          <div className="WomenForm_head">In Just 2 Steps</div>
                  <form>
                      <div className="row" style={{marginLeft:"5px"}}> 
-                         <div className="form-row row1">
-                     <div className="form-group col-md-4 col-sm-12">
-                     <input type="name" class="form-control " id="WomenForm_input" placeholder="First Name"/>
+                     <div className="form-row row1 ">
+                                <div className="col-md-4 col-sm-12 no-gutters ">
+                                <input type="text" class="form-control " id="Student_input" placeholder="First Name" />
+                                </div>
+                                <div className="col-md-4 col-sm-12 no-gutters">
+                                <input type="text" class="form-control " id="Student_input" placeholder="Middle Name" />
+                                </div>
+                                <div className="col-md-4 col-sm-12 no-gutters">
+                                <input type="text" class="form-control " id="Student_input" placeholder="Last Name" />
+                                </div>
+                                </div>
+                     <div className="form-row row1">
+                     <div className="col-md-4 col-sm-12 no-gutters ">
+                     <input type="date" class="form-control " id="Student_input" placeholder="Date of Birth"/>
                      </div>
-                     <div className="form-group col-md-4 col-sm-12">
-                     <input type="name" class="form-control" id="WomenForm_input" placeholder="Middle Name"/>
-                     </div>
-                     <div className="form-group col-md-4 col-sm-12">
-                     <input type="name" class="form-control" id="WomenForm_input" placeholder="Last Name"/>
-                     </div>
-                     <div className="form-group col-md-4 col-sm-12">
-                     <input type="name" class="form-control" id="WomenForm_input" placeholder="Date of Birth"/>
-                     </div>
-                     </div>
-                     <div className="form-group col-md-4 col-sm-12">
-                     <select class="WomenForm_select form-select" aria-label="WomenForm_input">
-                     <option selected>Marital Status</option>
-                     <option value="1">Single</option>
-                     <option value="2">Married</option>
-                    </select>
-                     </div>
-                     <div className="form-group col-md-4 col-sm-12">
-                     <select className ="WomenForm_select form-select" aria-label="WomenForm_input">
-                     <option selected>Blood Group</option>
-                     <option value="1">A+</option>
-                     <option value="2">A-</option>
-                     <option value="1">B+</option>
-                     <option value="2">B-</option>
-                     <option value="1">O+</option>
-                     <option value="2">O-</option>
-                    </select>
-                     </div>
-                     <div className="form-group col-md-12 col-sm-12">
-                     <textarea type="text area" class="Women_form_add form-control"  placeholder="Address"/>
+                     <div className="col-md-4 col-sm-12 no-gutters ">
+                     <select  class="form-control " id="Student_input" placeholder="Marital Status">
+                                    <option disabled selected>Marital Status</option>
+                                    <option>Single</option>
+                                    <option>Married</option>
+                                    </select>
+                        </div>
+                        <div className="col-md-4 col-sm-12 no-gutters ">           
+                     <select  class="form-control " id="Student_input" placeholder="Blood Group">
+                                    <option disabled selected>Blood Group</option>
+                                    <option>A+</option>
+                                    <option>B+</option>
+                                    <option>O+</option>
+                                    <option>A-</option>
+                                    <option>B-</option>
+                                    <option>O-</option>
+                                    <option>B+</option>
+                                    <option>B+</option>
+                                    </select>
+                                    </div>
+                                   </div>
+                                
+                     
+                    
+                     
+                     <div className="form-row ">
+                     
+                     <textarea type="text area" className="Student_add "  placeholder="Address"/>
                      </div>
                      <div className="form-row row1">
-                     <div className="form-group inline-form">
-                     <input type="name" className="WomenForm_em form-control" id="WomenForm_input" placeholder="Email-id"/>
+                     <div className="col-md-6 col-sm-12 no-gutters ">
+                     <input type="email" className="WomenForm_em form-control" id="Student_input" placeholder="Email-id"/>
+                   
                      </div>
-                     <div className="form-group inline-form">
-                     <input type="name" className="WomenForm_em form-control" id="WomenForm_input" placeholder="Confirm Email-id"/>
-                     </div>
-                     </div>
-                     <div className="form-row row1">
-                     <div className="form-group ">
-                     <input type="name" class="form-control" id="WomenForm_input" placeholder="Mobile Number"/>
-                     </div>
-                     <div className="form-group col-md-6 col-sm-12">
-                     <input type="name" class="form-control" id="WomenForm_input" placeholder="Mobile Number 2"/>
+                     <div className="col-md-6 col-sm-12 no-gutters ">
+                    
+                     <input type="email" className="WomenForm_em form-control" id="Student_input" placeholder="Confirm Email-id"/>
+                     
                      </div>
                      </div>
                      <div className="form-row row1">
-                     <div className="form-group col-md-6 col-sm-12">
-                     <input type="name" class="form-control" id="WomenForm_input" placeholder="City"/>
+                     <div className="col-md-4 col-sm-12 no-gutters ">
+                     <input type="name" class="form-control" id="Student_input" placeholder="Mobile Number"/>
                      </div>
-                     <div className="form-group col-md-6 col-sm-12">
-                     <input type="name" class="form-control" id="WomenForm_input" placeholder="State"/>
+                     <div className="col-md-4 col-sm-12 no-gutters ">
+                     <input type="name" class="form-control" id="Student_input" placeholder="Mobile Number 2"/>
                      </div>
                      </div>
-                     <button className="WomenForm_next" onClick={this.handleClickNext}> Next</button>
+                     <div className="form-row row1">
+                     <div className="col-md-4 col-sm-12 no-gutters ">
+                     <input type="name" class="form-control" id="Student_input" placeholder="City"/>
+                     </div>
+                     <div className="col-md-4 col-sm-12 no-gutters ">
+                     <input type="name" class="form-control" id="Student_input" placeholder="State"/>
+                     </div>
+                     </div>
+                     <div>
+                                <button className="Student_next" onClick={this.handleClickNext}>
+                                    NEXT
+                                    </button>
+                                    </div>
                      </div>
                  </form>
                 </div>
@@ -106,17 +124,17 @@ export default class WomenForm extends React.Component
                 <div className="WomenForm_heading">Come Join Us</div>
                          <div className="WomenForm_head">You are so close</div>
                  <form>
-                     <div className="form-row">
+                     <div className="form-row row1">
                          
-                     <div className="form-group col-md-4">
-                     <select class="WomenForm_drop form-select" aria-label="WomenForm_input">
+                     <div className="col-md-5">
+                     <select className="WomenForm_drop form-select" id="Student_input" aria-label="WomenForm_input">
                      <option selected>Registering as</option>
                      <option value="1">1</option>
                      <option value="2">2</option>
                     </select>
                      </div>
-                     <div className="form-group col-md-4">
-                     <select class="WomenForm_drop form-select" aria-label="WomenForm_input">
+                     <div className=" col-md-5">
+                     <select class=" WomenForm_drop form-select" id="Student_input" aria-label="WomenForm_input">
                      <option selected>Qualification</option>
                      <option value="1">1</option>
                      <option value="2">2</option>
@@ -126,16 +144,16 @@ export default class WomenForm extends React.Component
                      <div className="row">
                      <div className="WomenForm_member">Expected Branch for Membership</div>
                      </div>
-                     <div className="row">
-                     <div className="form-group col-md-4">
-                     <select class="WomenForm_select form-select" aria-label="WomenForm_input">
+                     <div className="form-row row1">
+                     <div className=" col-md-4 col-sm-12">
+                     <select class="WomenForm_select form-select" id="Student_input" aria-label="WomenForm_input">
                      <option selected>Select District</option>
                      <option value="1">1</option>
                      <option value="2">2</option>
                     </select>
                      </div>
-                     <div className="form-group col-md-4">
-                     <select class="WomenForm_select form-select" aria-label="WomenForm_input">
+                     <div className=" col-md-4 col-sm-12">
+                     <select class="WomenForm_select form-select" id="Student_input" aria-label="WomenForm_input">
                      <option selected>Select Branch</option>
                      <option value="1">1</option>
                      <option value="2">2</option>
@@ -145,23 +163,38 @@ export default class WomenForm extends React.Component
                      <div className="col-md-12">
                      <div className="WomenForm_member" style={{textAlign:"left"}}>Upload Documents</div>
                      </div>
-                     <div className="form-row">
-                     <div className="form-group col-md-4">
-                     <input type="name" class="form-control" id="WomenForm_input" placeholder="Passport Photo"/>
+                     <div className="form-row row1">
+                     <div className=" col-md-5 col-sm-12">
+                     <input type="name" class="form-control" id="Student_input"id="Student_input" placeholder="Passport Photo"/>
                      </div>
-                     <div className="form-group col-md-4">
-                     <input type="name" class="form-control" id="WomenForm_input" placeholder="MCIM Registration Certificate"/>
+                     <div className=" col-md-5 col-sm-12">
+                     <input type="name" class="form-control" id="Student_input" placeholder="MCIM Registration Certificate"/>
                      </div>
+                     
+                     <div className="col-md-5 col-sm-12 ">
+                     <input type="name" class="form-control" id="Student_input" placeholder="Degree Certificate"/>
                      </div>
-                     <div className="form-group ">
-                     <input type="name" class="form-control" id="WomenForm_input" placeholder="Degree Certificate"/>
                      </div>
                      {/* <div className="WomenForm_cap">Capcha</div> */}
-                     <div className="WomenForm_capcha">RTX3090</div>
-                     <div className="form-group ">
-                     <input type="text" class="form-control" id="WomenForm_input" placeholder="Enter Capcha"/>
-                     </div>
-                     <button className="WomenForm_reg" > REGISTER</button>
+                     <div className="form-row row4">
+                              <div className="col-sm-12">
+                                <div className ="col Student_capcha" >RTX3090</div>
+                                </div>
+                                <div className="col-sm-12">
+                                <input className ="form-control col " id="Student_input" placeholder="Enter Capcha"/>
+                                </div>
+                                <div className=" col"></div>
+
+                                </div>
+                                <div className="row5 row d-flex align-content-center">
+                                {/* <div className="col-md-6"> */}
+                                <a  onClick={this.handleClick} className="Student_back"  ><span><img src={arrow}></img> </span>Back
+                                </a>
+                                {/* </div>
+                                <div className="col-md-6"> */}
+                                <button className ="Student_submit"> Submit</button>
+                                {/* </div> */}
+                                </div>
                      {/* </div> */}
                  </form>
                 </div>

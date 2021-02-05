@@ -9,19 +9,22 @@
   padding-left: 0px !important;
   margin-left: 12px !important;
 }
+.form-row {
+  margin-left: 28px !important;
+  margin-right: 28px !important;
+  width: 100%;
+}
 #WomenForm_input {
   width: 190px !important;
   height: 38px;
   border: 1px solid #cadeef;
   box-sizing: border-box;
   border-radius: 7px;
-  margin-left: 28px !important;
-  margin-right: 28px !important;
-  margin-bottom: 35px;
   color: #390969;
+  margin-right: 28px;
 }
 .WomenForm_select {
-  width: 187px;
+  width: 100%;
   height: 38px;
   left: 264px;
   top: 333px;
@@ -75,18 +78,18 @@ input.WomenForm_add.form-control {
   height: 62px !important;
 }
 
-.WomenForm_em {
+/* .WomenForm_em {
   width: 188px;
-}
+} */
 .form_main {
   margin: 0px !important;
   padding: 0px !important;
 }
 .WomenForm_drop {
-  width: 213px;
+  width: 100%;
   height: 38px;
-  margin-left: 46px;
-  top: 260px;
+  /* margin-left: 46px;
+  top: 260px; */
 
   border: 1px solid #cadeef;
   box-sizing: border-box;
@@ -111,7 +114,7 @@ input.WomenForm_add.form-control {
   font-size: 25px;
   line-height: 30px;
   /* identical to box height */
-
+  text-align: left !important;
   color: #390969;
 }
 .WomenForm_reg {
@@ -125,4 +128,9 @@ input.WomenForm_add.form-control {
   box-sizing: border-box;
   border-radius: 7px;
   color: white;
+}
+@media (max-width: 500px) {
+  .Student_capcha {
+    margin-bottom: 18px;
+  }
 }
