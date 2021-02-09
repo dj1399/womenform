@@ -1,12 +1,15 @@
-import logo from './logo.svg';
-import './App.css';
-import WomenForm from './WomenForm/WomenForm';
-import StudentForm from './StudentForm/StudentForm';
+import logo from "./logo.svg";
+import "./App.css";
+// import WomenForm from "./WomenForm/WomenForm";
+import WomenForumForm from "./WomenForm/WomenForumForm";
 
 function App() {
   return (
     <div className="App">
-      <WomenForm/>
+      <WomenForumForm />
+      {/*  
+      <WomenForm />
+       */}
       {/* <StudentForm/> */}
     </div>
   );

@@ -1,28 +1,14 @@
 .WomenForm_img {
   background-color: black;
+  height: 100vh;
 }
-.form-group {
-  padding-left: 14px !important;
-  padding-right: 14px !important;
-}
-.col {
-  padding-left: 0px !important;
-  margin-left: 12px !important;
-}
+
 .form-row {
   margin-left: 28px !important;
   margin-right: 28px !important;
   width: 100%;
 }
-#WomenForm_input {
-  width: 190px !important;
-  height: 38px;
-  border: 1px solid #cadeef;
-  box-sizing: border-box;
-  border-radius: 7px;
-  color: #390969;
-  margin-right: 28px;
-}
+
 .WomenForm_select {
   width: 100%;
   height: 38px;
@@ -50,7 +36,6 @@
 }
 .Student_next {
   align-items: center;
-  margin-left: 100%;
 }
 .WomenForm_head {
   width: 515px;
@@ -149,7 +134,23 @@ input.WomenForm_add.form-control {
   margin-left: 514px;
   margin-bottom: 70px;
 }
-@media (max-width: 500px) {
+
+@media (min-width: 1200px) {
+  .Women_page1Img {
+    margin-right: 150px;
+  }
+}
+
+/* Big tablets */
+@media (min-width: 800px) and (max-width: 1200px) {
+}
+
+/* Tablet */
+@media only screen and (min-width: 481px) and (max-width: 800px) {
+}
+
+/* mobile */
+@media (max-width: 480px) {
   .Student_capcha {
     margin-bottom: 18px;
   }
