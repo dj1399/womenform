@@ -83,7 +83,7 @@ export default class WomenForumForm extends Component {
   };
   handleSubmit = (event) => {
     event.preventDefault();
-    this.recaptcha.execute();
+    // this.recaptcha.execute();
     console.log(this.state);
     const data = new FormData();
     data.append("firstName", this.state.firstName);
@@ -513,11 +513,11 @@ export default class WomenForumForm extends Component {
                       >
                         REGISTER
                       </button>
-                      <Recaptcha
+                      {/*  <Recaptcha
                         ref={(ref) => (this.recaptcha = ref)}
                         sitekey="6Lfj_U0aAAAAAKu_W5IjQrRS2BHjRypOQCUT74qU"
                         onResolved={this.onResolved}
-                      />
+                      /> */}
                     </div>
                   </div>
                   <div className="row d-flex justify-content-end">
