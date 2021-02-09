@@ -85,15 +85,6 @@ export default class WomenForumForm extends Component {
     event.preventDefault();
     this.recaptcha.execute();
     console.log(this.state);
-  };
-  handleChange = (e) => {
-    this.setState({
-      [e.target.name]: e.target.value,
-    });
-  };
-  onResolved = () => {
-    this.setState({ messageSent: true });
-    console.log(this.state);
     const data = new FormData();
     data.append("firstName", this.state.firstName);
     data.append("middleName", this.state.middleName);
@@ -127,6 +118,15 @@ export default class WomenForumForm extends Component {
         alert("Error : " + err);
         console.log(err);
       });
+  };
+  handleChange = (e) => {
+    this.setState({
+      [e.target.name]: e.target.value,
+    });
+  };
+  onResolved = () => {
+    this.setState({ messageSent: true });
+    // console.log(this.state);
   };
   render() {
     return (
