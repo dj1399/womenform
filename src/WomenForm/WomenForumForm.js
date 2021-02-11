@@ -4,6 +4,7 @@ import arrow from "../Images/arrow.svg";
 import Recaptcha from "react-google-invisible-recaptcha";
 import page1 from "../Images/page1.png";
 import page2 from "../Images/page2.png";
+import { MdFileUpload } from "react-icons/md";
 import { sendWomenForumForm } from "../DataService/WomenForm";
 export default class WomenForumForm extends Component {
   constructor(props) {
@@ -442,7 +443,7 @@ export default class WomenForumForm extends Component {
 
                   <p className="Women_Page2_heading2">Upload Documents</p>
                   <div className="row">
-                    <div className="form-group   col-md-5 col-12">
+                    <div className="form-group col-md-5 col-12">
                       <input id="passportPhoto" type="file" hidden />
                       <button
                         onClick={this.fileUploadpassportPhoto}
@@ -452,13 +453,18 @@ export default class WomenForumForm extends Component {
                       >
                         {" "}
                         Passport Photo
-                        <i className="fa fa-upload ml-md-2 ml-lg-5 ml-5"></i>
+                        {/*  <i className="fa fa-upload ml-md-2 ml-lg-5 ml-5"></i> */}
+                        <MdFileUpload
+                          className="ml-md-2 ml-lg-5 ml-5"
+                          size={20}
+                        />
                       </button>
                       {/* {this.state.marriageCertificate != null &&
                             this.state.marriageCertificateName
                         } */}
+                      <small>{this.state.passportPhotoName}</small>
                     </div>
-                    <div className="form-group  col-md-7  col-12">
+                    <div className="form-group  col-md-7 col-12">
                       <input id="MCIMRegCertificate" type="file" hidden />
                       <button
                         className="btn WomenForm_uploadform_btno Women_MCIM_btn"
@@ -468,8 +474,14 @@ export default class WomenForumForm extends Component {
                       >
                         {" "}
                         MCIM Registration Certificate
-                        <i className="fa fa-upload ml-md-2 ml-lg-2 ml-5"></i>
+                        {/*  <i className="fa fa-upload ml-md-2 ml-lg-2 ml-5"></i> */}
+                        <MdFileUpload
+                          className="ml-md-2 ml-lg-5 ml-5"
+                          size={20}
+                        />
                       </button>
+                      <small>{this.state.MCIMRegistrationName}</small>
+
                       {/* {this.state.marriageCertificate != null &&
                           this.state.marriageCertificateName
                       } */}
@@ -486,8 +498,14 @@ export default class WomenForumForm extends Component {
                       >
                         {" "}
                         Degree Certificate
-                        <i className="fa fa-upload ml-md-2 ml-lg-3 ml-5"></i>
+                        {/*  <i className="fa fa-upload ml-md-2 ml-lg-3 ml-5"></i> */}
+                        <MdFileUpload
+                          className="ml-md-2 ml-lg-5 ml-5"
+                          size={20}
+                        />
                       </button>
+                      <small>{this.state.degreeCertificateName}</small>
+
                       {/* {this.state.marriageCertificate != null &&
                       this.state.marriageCertificateName
                   } */}
