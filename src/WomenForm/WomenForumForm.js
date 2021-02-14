@@ -6,6 +6,8 @@ import page1 from "../Images/page1.png";
 import page2 from "../Images/page2.png";
 import { MdFileUpload } from "react-icons/md";
 import { sendWomenForumForm } from "../DataService/WomenForm";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 export default class WomenForumForm extends Component {
   constructor(props) {
     super(props);
@@ -34,7 +36,26 @@ export default class WomenForumForm extends Component {
       degreeCertificateName: "",
       MCIMRegistrationName: "",
       passportPhotoName: "",
+      selectYear: "2021",
+      selectMonth: "January",
     };
+    this.range = this.range.bind(this);
+    this.handleDobChange = this.handleDobChange.bind(this);
+    this.handleRegDateChange = this.handleRegDateChange.bind(this);
+  }
+  handleDobChange(d) {
+    this.setState({ dateOfBirth: d });
+  }
+  range(start, end) {
+    var ans = [];
+    for (let i = start; i <= end; i++) {
+      ans.push(i);
+    }
+    return ans;
+  }
+  handleRegDateChange(d) {
+    this.setState({ dateOfRegistration: d });
+    // this.handleTitlePaper = this.handleTitlePaper.bind(this);
   }
   fileUploadDegreeCertificate = () => {
     document.getElementById("degreeCertificate").click();
@@ -130,6 +151,22 @@ export default class WomenForumForm extends Component {
     // console.log(this.state);
   };
   render() {
+    var d = new Date();
+    const years = this.range(1940, 2021);
+    const months = [
+      "January",
+      "February",
+      "March",
+      "April",
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October",
+      "November",
+      "December",
+    ];
     return (
       <div className="Women_mainDiv ">
         <div className="row p-0 m-0">
@@ -190,7 +227,73 @@ export default class WomenForumForm extends Component {
                   </div>
                   <div className="row ">
                     <div className="form-group Women_form_row2  col-md-4 col-12">
-                      <input
+                      <DatePicker
+                        // calendarClassName="col-md-4 col-12"
+                        // className="col-md-4 col-12"
+                        renderCustomHeader={({
+                          date,
+                          changeYear,
+                          changeMonth,
+                          decreaseMonth,
+                          increaseMonth,
+                          prevMonthButtonDisabled,
+                          nextMonthButtonDisabled,
+                        }) => (
+                          <div
+                            style={{
+                              margin: 10,
+                              display: "flex",
+                              justifyContent: "center",
+                            }}
+                          >
+                            <button
+                              onClick={decreaseMonth}
+                              disabled={prevMonthButtonDisabled}
+                            >
+                              {"<"}
+                            </button>
+                            <select
+                              value={this.state.selectYear}
+                              onChange={({ target: { value } }) => {
+                                changeYear(value);
+                                this.setState({ selectYear: value });
+                              }}
+                            >
+                              {years.map((option) => (
+                                <option key={option} value={option}>
+                                  {option}
+                                </option>
+                              ))}
+                            </select>
+
+                            <select
+                              value={this.state.selectMonth}
+                              onChange={({ target: { value } }) => {
+                                changeMonth(months.indexOf(value));
+                                this.setState({ selectMonth: value });
+                              }}
+                            >
+                              {months.map((option) => (
+                                <option key={option} value={option}>
+                                  {option}
+                                </option>
+                              ))}
+                            </select>
+
+                            <button
+                              onClick={increaseMonth}
+                              disabled={nextMonthButtonDisabled}
+                            >
+                              {">"}
+                            </button>
+                          </div>
+                        )}
+                        selected={this.state.dateOfBirth}
+                        onChange={this.handleDobChange}
+                        className="personalDOB col-12"
+                        placeholderText="Date of Birth"
+                      ></DatePicker>
+                      {/*  <input
                         type="date"
                         className="form-control "
                         id="DateOfBirth"
@@ -198,7 +301,7 @@ export default class WomenForumForm extends Component {
                         onChange={this.handleChange}
                         required
                         placeholder="Date of Birth"
-                      />
+                      /> */}
                     </div>
                     <div className="form-group Women_form_row2 col-md-4 col-12">
                       <select

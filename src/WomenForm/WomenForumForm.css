@@ -166,10 +166,10 @@
     width: 100%;
   }
   .WomenForm_Form {
-    margin-left: 10px;
+    margin-left: 20px;
     text-align: left;
     margin-top: 20px;
-    margin-right: 10px;
+    margin-right: 20px;
   }
   .WomenForm_headCol1 {
     margin-left: 10px;
@@ -291,10 +291,10 @@
     width: 100%;
   }
   .WomenForm_Form {
-    margin-left: 10px;
+    margin-left: 20px;
     text-align: left;
     margin-top: 20px;
-    margin-right: 10px;
+    margin-right: 20px;
   }
   .WomenForm_headCol1 {
     margin-left: 10px;
@@ -412,4 +412,16 @@
   .Women_Page1Image {
     margin-right: 20px;
   }
+  .personalDOB {
+    height: 2.5rem;
+    width: 21rem;
+    border-radius: 7px;
+    border: 1px solid #29507c;
+  }
+}
+
+.personalDOB {
+  height: 2.5rem;
+  border-radius: 7px;
+  border: 1px solid #29507c;
 }
