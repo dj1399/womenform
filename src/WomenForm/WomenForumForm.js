@@ -17,7 +17,7 @@ export default class WomenForumForm extends Component {
       firstName: "",
       middleName: "",
       lastName: "",
-      DateOfBirth: "",
+      dateOfBirth: "",
       maritalStatus: "",
       bloodGroup: "",
       address: "",
@@ -38,6 +38,7 @@ export default class WomenForumForm extends Component {
       passportPhotoName: "",
       selectYear: "2021",
       selectMonth: "January",
+      cemail: "",
     };
     this.range = this.range.bind(this);
     this.handleDobChange = this.handleDobChange.bind(this);
@@ -107,39 +108,76 @@ export default class WomenForumForm extends Component {
     event.preventDefault();
     // this.recaptcha.execute();
     console.log(this.state);
-    const data = new FormData();
-    data.append("firstName", this.state.firstName);
-    data.append("middleName", this.state.middleName);
-    data.append("lastName", this.state.lastName);
-    data.append("DateOfBirth", this.state.DateOfBirth);
-    data.append("maritalStatus", this.state.maritalStatus);
-    data.append("bloodGroup", this.state.bloodGroup);
-    data.append("address", this.state.address);
-    data.append("email", this.state.email);
-    data.append("contactNo", this.state.contactNo);
-    data.append("alternateNo", this.state.alternateNo);
-    data.append("city", this.state.city);
-    data.append("state", this.state.state);
-    data.append("registratingAs", this.state.registratingAs);
-    data.append("qualification", this.state.qualification);
-    data.append("membershipDistrict", this.state.membershipDistrict);
-    data.append("membershipBranch", this.state.membershipBranch);
-    data.append("passportPhoto", this.state.passportPhoto);
-    data.append("MCIMRegistration", this.state.MCIMRegistration);
-    data.append("degreeCertificate", this.state.degreeCertificate);
+    if (
+      this.state.firstName === "" ||
+      this.state.lastName === "" ||
+      this.state.middleName === "" ||
+      this.state.address === "" ||
+      this.state.dateOfBirth === "" ||
+      this.state.bloodGroup === "" ||
+      this.state.contactNo === "" ||
+      this.state.alternateNo === "" ||
+      this.state.maritalStatus === "" ||
+      this.state.email === "" ||
+      this.state.state === "" ||
+      this.state.city === "" ||
+      this.state.registratingAs === "" ||
+      this.state.cemail === "" ||
+      this.state.membershipDistrict === "" ||
+      this.state.membershipBranch === "" ||
+      this.state.qualification === ""
+    ) {
+      alert("Fill in data before submitting");
+    } else if (
+      this.state.contactNo.length !== 10 ||
+      this.state.alternateNo.length !== 10
+    ) {
+      alert("Enter 10 digits number");
+    } else if (
+      this.state.passportPhoto === null ||
+      this.state.MCIMRegistration === null ||
+      this.state.degreeCertificate === null
+    ) {
+      alert("Upload documents");
+    } else {
+      if (this.state.email === this.state.cemail) {
+        const data = new FormData();
+        data.append("firstName", this.state.firstName);
+        data.append("middleName", this.state.middleName);
+        data.append("lastName", this.state.lastName);
+        data.append("DateOfBirth", this.state.dateOfBirth);
+        data.append("maritalStatus", this.state.maritalStatus);
+        data.append("bloodGroup", this.state.bloodGroup);
+        data.append("address", this.state.address);
+        data.append("email", this.state.email);
+        data.append("contactNo", this.state.contactNo);
+        data.append("alternateNo", this.state.alternateNo);
+        data.append("city", this.state.city);
+        data.append("state", this.state.state);
+        data.append("registratingAs", this.state.registratingAs);
+        data.append("qualification", this.state.qualification);
+        data.append("membershipDistrict", this.state.membershipDistrict);
+        data.append("membershipBranch", this.state.membershipBranch);
+        data.append("passportPhoto", this.state.passportPhoto);
+        data.append("MCIMRegistration", this.state.MCIMRegistration);
+        data.append("degreeCertificate", this.state.degreeCertificate);
 
-    sendWomenForumForm(data)
-      .then((response) => {
-        console.log(response);
-        if (response.data.status === "success") {
-          alert("Success " + response.data.message);
-          window.location.reload();
-        }
-      })
-      .catch((err) => {
-        alert("Error : " + err);
-        console.log(err);
-      });
+        sendWomenForumForm(data)
+          .then((response) => {
+            console.log(response);
+            if (response.data.status === "success") {
+              alert("Success " + response.data.message);
+              // window.location.reload();
+            }
+          })
+          .catch((err) => {
+            alert("Error : " + err);
+            console.log(err);
+          });
+      } else {
+        alert("Email do not match");
+      }
+    }
   };
   handleChange = (e) => {
     this.setState({
@@ -187,6 +225,7 @@ export default class WomenForumForm extends Component {
                         // id="Form_input1"
                         placeholder="First Name"
                         required
+                        value={this.state.firstName}
                         pattern="[A-Za-z_ ]{1,32}"
                         title="*ENTER CHARACTER VALUES ONLY"
                         name="firstName"
@@ -205,6 +244,7 @@ export default class WomenForumForm extends Component {
                         pattern="[A-Za-z_ ]{1,32}"
                         title="*ENTER CHARACTER VALUES ONLY"
                         name="middleName"
+                        value={this.state.middleName}
                         onChange={this.handleChange}
                         id="middleName"
                         style={{ color: "#390969" }}
@@ -222,6 +262,7 @@ export default class WomenForumForm extends Component {
                         title="*ENTER CHARACTER VALUES ONLY"
                         pattern="[A-Za-z_ ]{1,32}"
                         placeholder="Last Name"
+                        value={this.state.lastName}
                       />
                     </div>
                   </div>
@@ -310,13 +351,14 @@ export default class WomenForumForm extends Component {
                         name="maritalStatus"
                         onChange={this.handleChange}
                         required
+                        value={this.state.maritalStatus}
                         placeholder="Marital Status"
                       >
-                        <option disabled selected>
+                        <option value="" disabled selected>
                           Marital Status
                         </option>
-                        <option>Single</option>
-                        <option>Married</option>
+                        <option value="single">Single</option>
+                        <option value="married">Married</option>
                       </select>
                     </div>
                     <div className="form-group Women_form_row2  col-md-4 col-12">
@@ -326,19 +368,20 @@ export default class WomenForumForm extends Component {
                         onChange={this.handleChange}
                         required
                         name="bloodGroup"
+                        value={this.state.bloodGroup}
                         placeholder="Blood Group"
                       >
-                        <option disabled selected>
+                        <option value="" disabled selected>
                           Blood Group
                         </option>
-                        <option>A+</option>
-                        <option>B+</option>
-                        <option>O+</option>
-                        <option>A-</option>
-                        <option>B-</option>
-                        <option>O-</option>
-                        <option>B+</option>
-                        <option>B+</option>
+                        <option value="A+">A+</option>
+                        <option value="B+">B+</option>
+                        <option value="O+">O+</option>
+                        <option value="A-">A-</option>
+                        <option value="B-">B-</option>
+                        <option value="O-">O-</option>
+                        <option value="AB+">AB+</option>
+                        <option value="AB-">AB-</option>
                       </select>
                     </div>
                   </div>
@@ -349,6 +392,7 @@ export default class WomenForumForm extends Component {
                         id="address"
                         onChange={this.handleChange}
                         name="address"
+                        value={this.state.address}
                         placeholder="Address"
                         rows="2"
                         required
@@ -366,6 +410,7 @@ export default class WomenForumForm extends Component {
                         name="email"
                         id="email"
                         title="*ENTER CHARACTER VALUES ONLY"
+                        value={this.state.email}
                         pattern="[A-Za-z_ ]{1,32}"
                         placeholder="Email"
                       />
@@ -377,8 +422,9 @@ export default class WomenForumForm extends Component {
                         // id="Form_input2"
                         required
                         onChange={this.handleChange}
-                        name="ConfirmEmail"
-                        id="ConfirmEmail"
+                        name="cemail"
+                        id="cemail"
+                        value={this.state.cemail}
                         title="*ENTER CHARACTER VALUES ONLY"
                         pattern="[A-Za-z_ ]{1,32}"
                         placeholder="Confirm Email"
@@ -398,6 +444,7 @@ export default class WomenForumForm extends Component {
                         // id="Form_input2"
                         required
                         onChange={this.handleChange}
+                        value={this.state.contactNo}
                         placeholder="Mobile Number"
                       />
                     </div>
@@ -406,6 +453,7 @@ export default class WomenForumForm extends Component {
                         id="alternateNo"
                         pattern="[1-9]{1}[0-9]{9}"
                         title="Number should be of 10 digits only"
+                        value={this.state.alternateNo}
                         type="tel"
                         name="alternateNo"
                         className="form-control ContactForm_input"
@@ -423,6 +471,7 @@ export default class WomenForumForm extends Component {
                         type="text"
                         className="form-control"
                         id="city"
+                        value={this.state.city}
                         name="city"
                         onChange={this.handleChange}
                         required
@@ -432,6 +481,7 @@ export default class WomenForumForm extends Component {
                     <div className="form-group  col-md-4 col-12">
                       <input
                         type="text"
+                        value={this.state.state}
                         className="form-control"
                         id="state"
                         name="state"
@@ -477,6 +527,7 @@ export default class WomenForumForm extends Component {
                       <select
                         required
                         className="form-control"
+                        value={this.state.registratingAs}
                         id="registratingAs"
                         name="registratingAs"
                         onChange={this.handleChange}
@@ -492,6 +543,7 @@ export default class WomenForumForm extends Component {
                     <div className="form-group  col-md-4 col-12">
                       <select
                         className="form-control"
+                        value={this.state.qualification}
                         id="qualification"
                         required
                         onChange={this.handleChange}
@@ -513,6 +565,7 @@ export default class WomenForumForm extends Component {
                     <div className="form-group Women_form_row2  col-md-4 col-12">
                       <select
                         className="form-control"
+                        value={this.state.membershipDistrict}
                         id="membershipDistrict"
                         onChange={this.handleChange}
                         required
@@ -531,6 +584,7 @@ export default class WomenForumForm extends Component {
                         className="form-control "
                         id="membershipBranch"
                         onChange={this.handleChange}
+                        value={this.state.membershipBranch}
                         name="membershipBranch"
                         required
                         placeholder="Marital Status"
