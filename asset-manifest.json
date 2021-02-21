@@ -1,27 +1,28 @@
 {
   "files": {
-    "main.css": "/womenform/static/css/main.b09d56c0.chunk.css",
-    "main.js": "/womenform/static/js/main.36ffcaa6.chunk.js",
-    "main.js.map": "/womenform/static/js/main.36ffcaa6.chunk.js.map",
+    "main.css": "/womenform/static/css/main.09363ee4.chunk.css",
+    "main.js": "/womenform/static/js/main.fc8b51eb.chunk.js",
+    "main.js.map": "/womenform/static/js/main.fc8b51eb.chunk.js.map",
     "runtime-main.js": "/womenform/static/js/runtime-main.5ba2118a.js",
     "runtime-main.js.map": "/womenform/static/js/runtime-main.5ba2118a.js.map",
     "static/css/2.00850458.chunk.css": "/womenform/static/css/2.00850458.chunk.css",
-    "static/js/2.b8ff041e.chunk.js": "/womenform/static/js/2.b8ff041e.chunk.js",
-    "static/js/2.b8ff041e.chunk.js.map": "/womenform/static/js/2.b8ff041e.chunk.js.map",
+    "static/js/2.6853d891.chunk.js": "/womenform/static/js/2.6853d891.chunk.js",
+    "static/js/2.6853d891.chunk.js.map": "/womenform/static/js/2.6853d891.chunk.js.map",
     "static/js/3.4002bb5f.chunk.js": "/womenform/static/js/3.4002bb5f.chunk.js",
     "static/js/3.4002bb5f.chunk.js.map": "/womenform/static/js/3.4002bb5f.chunk.js.map",
     "index.html": "/womenform/index.html",
     "static/css/2.00850458.chunk.css.map": "/womenform/static/css/2.00850458.chunk.css.map",
-    "static/css/main.b09d56c0.chunk.css.map": "/womenform/static/css/main.b09d56c0.chunk.css.map",
-    "static/js/2.b8ff041e.chunk.js.LICENSE.txt": "/womenform/static/js/2.b8ff041e.chunk.js.LICENSE.txt",
+    "static/css/main.09363ee4.chunk.css.map": "/womenform/static/css/main.09363ee4.chunk.css.map",
+    "static/js/2.6853d891.chunk.js.LICENSE.txt": "/womenform/static/js/2.6853d891.chunk.js.LICENSE.txt",
     "static/media/arrow.bbd42660.svg": "/womenform/static/media/arrow.bbd42660.svg",
+    "static/media/imageCol.929b81eb.png": "/womenform/static/media/imageCol.929b81eb.png",
     "static/media/logo.6ce24c58.svg": "/womenform/static/media/logo.6ce24c58.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.5ba2118a.js",
     "static/css/2.00850458.chunk.css",
-    "static/js/2.b8ff041e.chunk.js",
-    "static/css/main.b09d56c0.chunk.css",
-    "static/js/main.36ffcaa6.chunk.js"
+    "static/js/2.6853d891.chunk.js",
+    "static/css/main.09363ee4.chunk.css",
+    "static/js/main.fc8b51eb.chunk.js"
   ]
 }
