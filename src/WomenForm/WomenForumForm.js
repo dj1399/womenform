@@ -7,6 +7,7 @@ import page2 from "../Images/page2.png";
 import { MdFileUpload } from "react-icons/md";
 import { sendWomenForumForm } from "../DataService/WomenForm";
 import DatePicker from "react-datepicker";
+import imageCol from "../Images/imageCol.png";
 import "react-datepicker/dist/react-datepicker.css";
 export default class WomenForumForm extends Component {
   constructor(props) {
@@ -211,17 +212,35 @@ export default class WomenForumForm extends Component {
           {this.state.firstPage && (
             <Fragment>
               <div className="col-md-6 col-12 p-0">
-                <div className="Women_Col2Image WomenForm_MobileView"></div>
+                <div className="Women_Col2Image WomenForm_MobileView">
+                  <div className="row WomenForm_MobileRow">
+                    <div className="WomenForm_headcol2">
+                      <p className="WomenForm_headingCol2">Welcome at</p>
+                      <p className="WomenForm_subheadingCol2">
+                        NIMA Women’s Forum!
+                      </p>
+                    </div>
+                  </div>
+                  <div className="row WomenForm_MobileRow">
+                    <div className="col-12 p-0">
+                      <img
+                        src={imageCol}
+                        alt="illustration"
+                        className="WomenForm_Illustration img-fluid"
+                      />
+                    </div>
+                  </div>
+                </div>
                 <div className="left WomenForm_headCol1">
                   <p className="WomenForm_headingCol1">Come Join Us</p>
                   <p className="WomenForm_headSubCol1">In Just 2 Steps</p>
                 </div>
                 <form className=" WomenForm_Form">
                   <div className="row">
-                    <div className="form-group  col-md-4 col-12">
+                    <div className="form-group col-md-4 col-12 WomenForumForm_marginTop">
                       <input
                         type="text"
-                        className="form-control ContactForm_input "
+                        className="form-control WomenForumForm_input "
                         // id="Form_input1"
                         placeholder="First Name"
                         required
@@ -234,10 +253,10 @@ export default class WomenForumForm extends Component {
                         style={{ color: "#390969" }}
                       />
                     </div>
-                    <div className="form-group  col-md-4 col-12">
+                    <div className="form-group  col-md-4 col-12 WomenForumForm_marginTop">
                       <input
                         type="text"
-                        className="form-control ContactForm_input "
+                        className="form-control WomenForumForm_input "
                         // id="Form_input1"
                         placeholder="Middle Name"
                         required
@@ -253,7 +272,7 @@ export default class WomenForumForm extends Component {
                     <div className="form-group  col-md-4 col-12">
                       <input
                         type="text"
-                        className="form-control ContactForm_input"
+                        className="form-control WomenForumForm_input"
                         // id="Form_input2"
                         required
                         onChange={this.handleChange}
@@ -266,11 +285,12 @@ export default class WomenForumForm extends Component {
                       />
                     </div>
                   </div>
-                  <div className="row ">
+                  <div className="row  mt-md-1 mt-lg-3">
                     <div className="form-group Women_form_row2  col-md-4 col-12">
                       <DatePicker
                         // calendarClassName="col-md-4 col-12"
                         // className="col-md-4 col-12"
+                        className="WomenForumForm_input"
                         renderCustomHeader={({
                           date,
                           changeYear,
@@ -286,6 +306,7 @@ export default class WomenForumForm extends Component {
                               display: "flex",
                               justifyContent: "center",
                             }}
+                            className="WomenForumForm_input"
                           >
                             <button
                               onClick={decreaseMonth}
@@ -331,7 +352,7 @@ export default class WomenForumForm extends Component {
                         )}
                         selected={this.state.dateOfBirth}
                         onChange={this.handleDobChange}
-                        className="personalDOB col-12"
+                        className="personalDOB col-12 WomenForumForm_input"
                         placeholderText="Date of Birth"
                       ></DatePicker>
                       {/*  <input
@@ -344,9 +365,9 @@ export default class WomenForumForm extends Component {
                         placeholder="Date of Birth"
                       /> */}
                     </div>
-                    <div className="form-group Women_form_row2 col-md-4 col-12">
+                    <div className="form-group Women_form_row2  col-md-4 col-12">
                       <select
-                        className="form-control "
+                        className="form-control WomenForumForm_input "
                         id="maritalStatus"
                         name="maritalStatus"
                         onChange={this.handleChange}
@@ -354,7 +375,12 @@ export default class WomenForumForm extends Component {
                         value={this.state.maritalStatus}
                         placeholder="Marital Status"
                       >
-                        <option value="" disabled selected>
+                        <option
+                          value=""
+                          className="WomenForumForm_input"
+                          disabled
+                          selected
+                        >
                           Marital Status
                         </option>
                         <option value="single">Single</option>
@@ -363,7 +389,7 @@ export default class WomenForumForm extends Component {
                     </div>
                     <div className="form-group Women_form_row2  col-md-4 col-12">
                       <select
-                        className="form-control "
+                        className="form-control WomenForumForm_input "
                         id="bloodGroup"
                         onChange={this.handleChange}
                         required
@@ -385,10 +411,10 @@ export default class WomenForumForm extends Component {
                       </select>
                     </div>
                   </div>
-                  <div className="col-12 p-0">
-                    <div className="form-group ">
+                  <div className="col-12 mt-lg-3 mt-md-1 p-0">
+                    <div className="form-group mb-0">
                       <textarea
-                        className="form-control ContactForm_input col-12"
+                        className="form-control WomenForumForm_input col-12"
                         id="address"
                         onChange={this.handleChange}
                         name="address"
@@ -399,11 +425,11 @@ export default class WomenForumForm extends Component {
                       ></textarea>
                     </div>
                   </div>
-                  <div className="row">
+                  <div className="row mt-md-1 mt-lg-4">
                     <div className="form-group  col-md-6 col-12">
                       <input
                         type="email"
-                        className="form-control ContactForm_input"
+                        className="form-control WomenForumForm_input"
                         // id="Form_input2"
                         required
                         onChange={this.handleChange}
@@ -418,7 +444,7 @@ export default class WomenForumForm extends Component {
                     <div className="form-group  col-md-6 col-12">
                       <input
                         type="email"
-                        className="form-control ContactForm_input"
+                        className="form-control WomenForumForm_input"
                         // id="Form_input2"
                         required
                         onChange={this.handleChange}
@@ -432,7 +458,7 @@ export default class WomenForumForm extends Component {
                     </div>
                   </div>
 
-                  <div className="row">
+                  <div className="row  mt-lg-3 mt-md-1">
                     <div className="form-group  col-md-4 col-12">
                       <input
                         id="contactNo"
@@ -440,7 +466,7 @@ export default class WomenForumForm extends Component {
                         title="Number should be of 10 digits only"
                         type="tel"
                         name="contactNo"
-                        className="form-control ContactForm_input"
+                        className="form-control WomenForumForm_input"
                         // id="Form_input2"
                         required
                         onChange={this.handleChange}
@@ -456,7 +482,7 @@ export default class WomenForumForm extends Component {
                         value={this.state.alternateNo}
                         type="tel"
                         name="alternateNo"
-                        className="form-control ContactForm_input"
+                        className="form-control WomenForumForm_input"
                         // id="Form_input2"
                         required
                         onChange={this.handleChange}
@@ -465,11 +491,11 @@ export default class WomenForumForm extends Component {
                     </div>
                   </div>
 
-                  <div className="row">
+                  <div className="row  mt-lg-3 mt-md-1">
                     <div className="form-group  col-md-4 col-12">
                       <input
                         type="text"
-                        className="form-control"
+                        className="form-control WomenForumForm_input"
                         id="city"
                         value={this.state.city}
                         name="city"
@@ -482,7 +508,7 @@ export default class WomenForumForm extends Component {
                       <input
                         type="text"
                         value={this.state.state}
-                        className="form-control"
+                        className="form-control WomenForumForm_input"
                         id="state"
                         name="state"
                         onChange={this.handleChange}
@@ -509,13 +535,52 @@ export default class WomenForumForm extends Component {
                   </div>
                 </form>
               </div>
-              <div className="col-md-6 col-12 Women_Col2Image WomenForm_DesktopView"></div>
+              <div className="col-md-6 col-12 Women_Col2Image WomenForumForm_col2 WomenForm_DesktopView">
+                <div className="row">
+                  <div className="WomenForm_headcol2">
+                    <p className="WomenForm_headingCol2">Welcome at</p>
+                    <p className="WomenForm_subheadingCol2">
+                      NIMA Women’s Forum!
+                    </p>
+                  </div>
+                </div>
+                <div className="row">
+                  <div className="col-12">
+                    <img
+                      src={imageCol}
+                      alt="illustration"
+                      className="WomenForm_Illustration img-fluid"
+                    />
+                  </div>
+                </div>
+                <div className="footer_upcloud row">
+                  <p>Powered by Upcloud Technology Pvt Ltd</p>
+                </div>
+              </div>
             </Fragment>
           )}
           {this.state.secondPage && (
             <Fragment>
               <div className="col-md-6 col-12 p-0">
-                <div className="Women_Col2Image WomenForm_MobileView"></div>
+                <div className="Women_Col2Image WomenForm_MobileView">
+                  <div className="row WomenForm_MobileRow">
+                    <div className="WomenForm_headcol2">
+                      <p className="WomenForm_headingCol2">Welcome at</p>
+                      <p className="WomenForm_subheadingCol2">
+                        NIMA Women’s Forum!
+                      </p>
+                    </div>
+                  </div>
+                  <div className="row WomenForm_MobileRow">
+                    <div className="col-12 p-0">
+                      <img
+                        src={imageCol}
+                        alt="illustration"
+                        className="WomenForm_Illustration img-fluid"
+                      />
+                    </div>
+                  </div>
+                </div>
 
                 <div className="left WomenForm_headCol1">
                   <p className="WomenForm_headingCol1">Come Join Us</p>
@@ -523,10 +588,10 @@ export default class WomenForumForm extends Component {
                 </div>
                 <form className=" WomenForm_Form">
                   <div className="row">
-                    <div className="form-group col-md-4 col-12">
+                    <div className="form-group col-md-4 col-12 mr-md-4">
                       <select
                         required
-                        className="form-control"
+                        className="form-control WomenForumForm_input"
                         value={this.state.registratingAs}
                         id="registratingAs"
                         name="registratingAs"
@@ -542,7 +607,7 @@ export default class WomenForumForm extends Component {
                     </div>
                     <div className="form-group  col-md-4 col-12">
                       <select
-                        className="form-control"
+                        className="form-control WomenForumForm_input"
                         value={this.state.qualification}
                         id="qualification"
                         required
@@ -562,9 +627,9 @@ export default class WomenForumForm extends Component {
                     Expected Branch for Membership
                   </p>
                   <div className="row w-100 ">
-                    <div className="form-group Women_form_row2  col-md-4 col-12">
+                    <div className="form-group Women_form_row2  col-md-4 col-12 mr-md-4">
                       <select
-                        className="form-control"
+                        className="form-control WomenForumForm_input"
                         value={this.state.membershipDistrict}
                         id="membershipDistrict"
                         onChange={this.handleChange}
@@ -581,13 +646,12 @@ export default class WomenForumForm extends Component {
                     </div>
                     <div className="form-group Women_form_row2 col-md-4 col-12">
                       <select
-                        className="form-control "
+                        className="form-control WomenForumForm_input"
                         id="membershipBranch"
                         onChange={this.handleChange}
                         value={this.state.membershipBranch}
                         name="membershipBranch"
                         required
-                        placeholder="Marital Status"
                       >
                         <option disabled value="" selected>
                           Select Branch
@@ -624,7 +688,7 @@ export default class WomenForumForm extends Component {
                     <div className="form-group  col-md-7 col-12">
                       <input id="MCIMRegCertificate" type="file" hidden />
                       <button
-                        className="btn WomenForm_uploadform_btno Women_MCIM_btn"
+                        className="btn WomenForm_uploadform_btno Women_MCIM_btn WomenForumForm_input"
                         onClick={this.fileUploadMCIMRegCertificate}
                         type="button"
                         // onClick={this.fileUploadmarriageCertificate}
@@ -644,12 +708,12 @@ export default class WomenForumForm extends Component {
                       } */}
                     </div>
                   </div>
-                  <div className="row">
+                  <div className="row  mt-md-2">
                     <div className="form-group  col-md-5 col-12">
                       <input id="degreeCertificate" type="file" hidden />
                       <button
                         onClick={this.fileUploadDegreeCertificate}
-                        className="btn WomenForm_uploadform_btno Women_MCIM_btn"
+                        className="btn WomenForm_uploadform_btno Women_MCIM_btn WomenForumForm_input"
                         type="button"
                         // onClick={this.fileUploadmarriageCertificate}
                       >
@@ -704,7 +768,25 @@ export default class WomenForumForm extends Component {
                   </div>
                 </form>
               </div>
-              <div className="col-md-6 col-12 Women_Col2Image WomenForm_DesktopView"></div>
+              <div className="col-md-6 col-12 Women_Col2Image WomenForm_DesktopView">
+                <div className="row">
+                  <div className="WomenForm_headcol2">
+                    <p className="WomenForm_headingCol2">Welcome at</p>
+                    <p className="WomenForm_subheadingCol2">
+                      NIMA Women’s Forum!
+                    </p>
+                  </div>
+                </div>
+                <div className="row">
+                  <div className="col-12">
+                    <img
+                      src={imageCol}
+                      alt="illustration"
+                      className="WomenForm_Illustration img-fluid"
+                    />
+                  </div>
+                </div>
+              </div>
             </Fragment>
           )}
         </div>
